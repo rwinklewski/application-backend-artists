@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -84,18 +85,18 @@ class Artist
     }
 
     /**
-     * @return ArrayCollection|Album[]
+     * @return Collection|Album[]
      */
-    public function getAlbums(): ArrayCollection
+    public function getAlbums(): Collection
     {
         return $this->albums;
     }
 
     /**
-     * @param ArrayCollection $albums
+     * @param Collection $albums
      * @return Artist
      */
-    public function setAlbums(ArrayCollection $albums): self
+    public function setAlbums(Collection $albums): self
     {
         $this->albums = $albums;
         return $this;
